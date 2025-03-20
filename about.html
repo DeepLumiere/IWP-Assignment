@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="src/logo.svg" alt="Website Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="about-container">
+    <button class="question" onclick="showAnswer('name')">Who am I?</button>
+    <p class="response" id="name-box">I am water.</p>
+    <button class="question" onclick="showAnswer('nationality')">Where am I from?</button>
+    <p class="response" id="nationality-box">From Mars?</p>
+    <button class="question" onclick="showAnswer('company')">Where do I work?</button>
+    <p class="response" id="company-box">I work in Heaven</p>
+    <button class="question" onclick="showAnswer('role')">What do I do?</button>
+    <p class="response" id="role-box">I keep the world workin'</p>
+    <button class="question" onclick="showAnswer('project')">What project I am working on?</button>
+    <p class="response" id="project-box">I am working on Project Deep.</p>
+
+
+</section>
+<footer>
+    <p>&copy; 2025 Deep Joshi. All Rights Reserved.</p>
+</footer>
+<script src="src/main.js"></script>
+</body>
+</html>

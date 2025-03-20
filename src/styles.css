@@ -269,6 +269,98 @@ input:focus {
 }
 
 a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Keeps text color same as parent */
+    text-decoration: none;
+    color: inherit;
+}
+
+.about-container {
+    text-align: left;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    padding: 20px;
+}
+
+.answer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background: #111;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    border: 2px solid deeppink;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px deeppink;
+    display: block;
+}
+
+.question {
+    font-size: 22px;
+    font-weight: bold;
+    color: deeppink;
+    background: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 50px;
+    border-width: 2px;
+    border-color: deeppink;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    width: fit-content;
+}
+
+.question:hover {
+    background: deeppink;
+    color: black;
+    box-shadow: 3px 3px 10px deepskyblue;
+}
+
+.answer.slide {
+    animation: slideLeft 0.5s ease-in-out;
+}
+
+.textbox {
+    color: white;
+}
+
+.response {
+    width: 200%;
+    max-width: 600px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid deeppink;
+    border-radius: 10px;
+    text-align: left;
+    outline: none;
+    transition: 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+
+
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+
+/* Change appearance when clicking inside */
+.response:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: deepskyblue;
+}
+
+/* Optional: Make text inside non-editable */
+.response[readonly] {
+    cursor: default;
 }

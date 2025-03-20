@@ -67,3 +67,29 @@ function saveBio(event) {
     document.getElementById("bio-content").style.display = "block";
     document.getElementById("bio-form").style.display = "none";
 }
+function showAnswer(type) {
+    let turn = null;
+    if (turn === null) {
+        turn = Math.floor(Math.random() * 3);
+
+    }
+    let names = ["Vraj", "Sakshi", "Deep"];
+    let nationality = ["India", "UAE", "United States of America"];
+    let role = ["Back-End Developer", "Front-End Developer", "Gentuu Penguin"];
+    let company = ["YCombinator", "Sequoia Ventures", "Chihuahua Technologies"];
+    let project = ["Elite Erudite", "Crayola", "Spark!"];
+
+    let answers = {
+        name: `My name is ${names[turn]}.`,
+        nationality: `I am from ${nationality[turn]}.`,
+        role: `I work as a ${role[turn]}.`,
+        company: `I am currently associated with ${company[turn]}.`,
+        project: `Right now, I am working on a project called "${project[turn]}".`
+    };
+
+    let answerBox = document.getElementById(`${type}-box`);
+    answerBox.style.animation = "";
+    answerBox.style.animation = "typing 3.5s steps(40, end),blink-caret .75s step-end";
+    answerBox.innerHTML = answers[type];
+
+}
