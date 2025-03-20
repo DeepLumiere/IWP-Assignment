@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Joshi - Bio</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<div class="bio-container">
+    <h1>Deep Joshi - Bio</h1>
+    <div id="bio-content">
+        <p><strong>Name:</strong> <span id="bio-name">Deep Joshi</span></p>
+        <p><strong>Date of Birth:</strong> <span id="bio-dob">January 1, 2000</span></p>
+        <p><strong>Nationality:</strong> <span id="bio-nationality">American</span></p>
+        <p><strong>Education:</strong></p>
+        <ul id="bio-education">
+            <li>Bachelor of Computer Science</li>
+            <li>Machine Learning Specialization</li>
+            <li>Cybersecurity Basics</li>
+            <li>Software Engineering Certification</li>
+        </ul>
+        <button id="edit-bio">Edit</button>
+    </div>
+
+    <div id="bio-form" style="display: none;">
+        <form onsubmit="saveBio(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="Deep Joshi">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" value="2000-01-01">
+
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" value="American">
+
+            <label for="education">Education (comma separated):</label>
+            <input type="text" id="education" value="Bachelor of Computer Science, Machine Learning Specialization, Cybersecurity Basics, Software Engineering Certification">
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+<script src="src/main.js"></script>
+</body>
+</html>
