@@ -1,0 +1,234 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* Header with Logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: deeppink;
+    padding: 10px 20px;
+    border-bottom: 1px solid deeppink;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+.logo:hover {
+    transform: rotateY(180deg);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: deeppink;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: deepskyblue;
+}
+
+/* Main Content Styles */
+main {
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid deeppink;
+}
+
+
+
+/* Improved Form Styling */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #000;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 3px deeppink;
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid deeppink;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #222;
+    color: #fff;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: deepskyblue;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: deeppink;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: deepskyblue;
+}
+
+/* Fix input spacing */
+input,
+textarea {
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.card {
+    background: deeppink;
+    justify-items: center;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: deepskyblue;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1em;
+    text-align: left;
+    background: #000;
+    color: #fff;
+    box-shadow: 0 0 10px 2px deeppink;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Headers */
+th {
+    background-color: deeppink;
+    color: black;
+    padding: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Table Rows */
+td {
+    padding: 12px;
+    border-bottom: 1px solid deepskyblue;
+}
+
+/* Alternating Row Colors */
+tr:nth-child(even) {
+    background-color: #111;
+}
+
+tr:hover {
+    background-color: deepskyblue;
+    color: black;
+    transition: 0.3s;
+}
