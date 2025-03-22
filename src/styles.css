@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: white;
     margin: 0;
     padding: 0;
     background-color: black;
@@ -25,8 +25,8 @@ header {
 .logo img:hover {
     transform: rotateY(180deg);
     border-radius: 50%;
-    /*background-color: deepskyblue;*/
-    box-shadow: 0px 0px 10px deepskyblue;
+    background-color: deepskyblue;
+    box-shadow: 0px 0px 20px deeppink;
 }
 
 nav ul {
@@ -58,7 +58,7 @@ main {
 }
 
 main h1 {
-    font-size: 2.5em;
+    font-size: 32px;
     margin-bottom: 20px;
 }
 
