@@ -102,6 +102,6 @@ function showAnswer(type) {
         }
     }
 
-    answerBox.style.animation = "typing 2.5s steps(60, end), blink-caret .75s step-end infinite";
+    answerBox.style.animation = "typing 2s steps(end, end)";
     typeEffect();
 }

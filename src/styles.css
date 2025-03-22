@@ -13,15 +13,21 @@ header {
     background-color: #000;
     color: deeppink;
     padding: 10px 20px;
-    border-bottom: 1px solid deeppink;
+    border-bottom: 0px solid deeppink;
 }
 
 .logo img {
     height: 60px;
     width: auto;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0px 0px 10px deeppink;
 }
-.logo:hover {
+.logo img:hover {
     transform: rotateY(180deg);
+    border-radius: 50%;
+    /*background-color: deepskyblue;*/
+    box-shadow: 0px 0px 10px deepskyblue;
 }
 
 nav ul {
@@ -38,7 +44,7 @@ nav ul li {
 nav ul li a {
     color: deeppink;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 20px;
     transition: 0.3s;
 }
 
@@ -187,45 +193,45 @@ button:hover {
 }
 
 
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1.1em;
-    text-align: left;
-    background: #000;
-    color: #fff;
-    box-shadow: 0 0 10px 2px deeppink;
-    border-radius: 10px;
-    overflow: hidden;
-}
+/*!* Table Styles *!*/
+/*table {*/
+/*    width: 100%;*/
+/*    border-collapse: collapse;*/
+/*    margin: 20px 0;*/
+/*    font-size: 1.1em;*/
+/*    text-align: left;*/
+/*    background: #000;*/
+/*    color: #fff;*/
+/*    box-shadow: 0 0 10px 2px deeppink;*/
+/*    border-radius: 10px;*/
+/*    overflow: hidden;*/
+/*}*/
 
-/* Table Headers */
-th {
-    background-color: deeppink;
-    color: black;
-    padding: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+/*!* Table Headers *!*/
+/*th {*/
+/*    background-color: deeppink;*/
+/*    color: black;*/
+/*    padding: 12px;*/
+/*    font-weight: bold;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
-/* Table Rows */
-td {
-    padding: 12px;
-    border-bottom: 1px solid deepskyblue;
-}
+/*!* Table Rows *!*/
+/*td {*/
+/*    padding: 12px;*/
+/*    border-bottom: 1px solid deepskyblue;*/
+/*}*/
 
-/* Alternating Row Colors */
-tr:nth-child(even) {
-    background-color: #111;
-}
+/*!* Alternating Row Colors *!*/
+/*tr:nth-child(even) {*/
+/*    background-color: #111;*/
+/*}*/
 
-tr:hover {
-    background-color: deepskyblue;
-    color: black;
-    transition: 0.3s;
-}
+/*tr:hover {*/
+/*    background-color: deepskyblue;*/
+/*    color: black;*/
+/*    transition: 0.3s;*/
+/*}*/
 
 .bio-container {
     max-width: 1200px;
@@ -314,9 +320,9 @@ a {
 }
 
 .question:hover {
-    background: deeppink;
-    color: black;
-    box-shadow: 3px 3px 10px deepskyblue;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: 0px 0px 15px deeppink;
 }
 
 .answer.slide {
@@ -328,14 +334,13 @@ a {
 }
 
 .response {
-    width: 200%;
-    max-width: 600px;
+    width: 600px;
     height: 50px;
     padding: 10px;
     font-size: 16px;
     color: white;
     background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid deeppink;
+    border: 1px solid deeppink;
     border-radius: 10px;
     text-align: left;
     outline: none;
@@ -350,17 +355,5 @@ a {
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
-    to { width: 100% }
-}
-
-
-/* Change appearance when clicking inside */
-.response:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: deepskyblue;
-}
-
-/* Optional: Make text inside non-editable */
-.response[readonly] {
-    cursor: default;
+    to { width: 600px }
 }
