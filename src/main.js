@@ -105,3 +105,31 @@ function showAnswer(type) {
     answerBox.style.animation = "typing 2s steps(end, end)";
     typeEffect();
 }
+
+function addCard() {
+    let name = document.getElementById("card-title").value;
+    let description = document.getElementById("card-description").value;
+    let link = document.getElementById("card-link").value;
+
+    if (!name || !description || !link) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    let cardContainer = document.getElementById("card-container");
+
+    let newCard = document.createElement("a");
+    newCard.href = link;
+    newCard.innerHTML = `
+        <div class="card">
+            <h3>${name}</h3>
+            <p>${description}</p>
+        </div>
+    `;
+
+    cardContainer.appendChild(newCard);
+
+    document.getElementById("card-title").value = "";
+    document.getElementById("card-description").value = "";
+    document.getElementById("card-link").value = "";
+}
