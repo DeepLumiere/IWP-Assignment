@@ -72,18 +72,18 @@ function showAnswer(type) {
     let names = ["Vraj", "Sakshi", "Deep"];
     let nationality = ["India", "UAE", "United States of America"];
     let role = ["Back-End Developer", "Front-End Developer", "Gentoo Penguin"];
-    let company = ["YCombinator", "Sequoia Ventures", "Chihuahua Technologies"];
-    let project = ["Elite Erudite", "Crayola", "Spark!"];
+    let company = ["Deep's Institute of Artificial Intelligence", "DeepWorld Designs", "Chihuahua Technologies"];
+    let project = ["Apache Kafka", "Apache Airavata", "Spoof Halwa!"];
 
     let hour = new Date().getHours();
     let turn = hour % 3;
 
     let answers = {
-        name: `My name is ${names[turn]}.`,
+        name: `My name is ${names[turn]}. How are you my friend?`,
         nationality: `I am from ${nationality[turn]}.`,
-        role: `I work as a ${role[turn]}.`,
+        role: `I work as a ${role[turn]}. As a ${role[turn]}`,
         company: `I am currently associated with ${company[turn]}.`,
-        project: `Right now, I am working on a project called "${project[turn]}".`
+        project: `Right now, I am working on a project called ${project[turn]}.`
     };
 
     let answerBox = document.getElementById(`${type}-box`);

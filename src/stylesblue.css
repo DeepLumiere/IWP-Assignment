@@ -10,7 +10,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000;
+    background-color: black;
     color: deeppink;
     padding: 10px 20px;
     border-bottom: 0px solid deeppink;
@@ -21,6 +21,7 @@ header {
     width: auto;
     border-radius: 50%;
     padding: 5px;
+    box-shadow: 0px 0px 10px deeppink;
 }
 .logo img:hover {
     transform: rotateY(180deg);
@@ -90,8 +91,8 @@ footer {
     max-width: 1200px;
     margin: 50px auto;
     padding: 25px;
-    background: #000;
-    color: #fff;
+    background: black;
+    color: white;
     border-radius: 15px;
     box-shadow: 0 0 15px 3px deeppink;
     text-align: center;
@@ -121,7 +122,7 @@ textarea {
     border-radius: 8px;
     font-size: 18px;
     background: #222;
-    color: #fff;
+    color: white;
     outline: none;
     box-sizing: border-box;
     resize: none;
@@ -168,7 +169,7 @@ button:hover {
 .card {
     background: deeppink;
     justify-items: center;
-    color: #fff;
+    color: white;
     border-radius: 10px;
     padding: 20px;
     width: 300px;
@@ -199,8 +200,8 @@ button:hover {
 /*    margin: 20px 0;*/
 /*    font-size: 1.1em;*/
 /*    text-align: left;*/
-/*    background: #000;*/
-/*    color: #fff;*/
+/*    background: black;*/
+/*    color: white;*/
 /*    box-shadow: 0 0 10px 2px deeppink;*/
 /*    border-radius: 10px;*/
 /*    overflow: hidden;*/
@@ -236,8 +237,8 @@ button:hover {
     max-width: 1200px;
     margin: 50px auto;
     padding: 25px;
-    background: #000;
-    color: #fff;
+    background: black;
+    color: white;
     border-radius: 15px;
     box-shadow: 0 0 15px 3px deeppink;
     text-align: center;
@@ -245,9 +246,6 @@ button:hover {
 
 h1 {
     color: deeppink;
-    justify-self: center;
-    border-bottom: 1px solid deeppink;
-    margin-bottom: 50px;
 }
 
 p, ul {
@@ -268,7 +266,7 @@ input {
     border-radius: 8px;
     font-size: 1.2em;
     background: #222;
-    color: #fff;
+    color: white;
     outline: none;
 }
 
@@ -336,7 +334,7 @@ a {
 }
 
 .response {
-    width: 800px;
+    width: 600px;
     height: 50px;
     padding: 10px;
     font-size: 16px;
@@ -358,8 +356,4 @@ a {
 @keyframes typing {
     from { width: 0 }
     to { width: 600px }
-}
-
-td {
-    padding-bottom: 20px;
 }
