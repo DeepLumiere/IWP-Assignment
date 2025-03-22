@@ -67,17 +67,16 @@ function saveBio(event) {
     document.getElementById("bio-content").style.display = "block";
     document.getElementById("bio-form").style.display = "none";
 }
-function showAnswer(type) {
-    let turn = null;
-    if (turn === null) {
-        turn = Math.floor(Math.random() * 3);
 
-    }
+function showAnswer(type) {
     let names = ["Vraj", "Sakshi", "Deep"];
     let nationality = ["India", "UAE", "United States of America"];
-    let role = ["Back-End Developer", "Front-End Developer", "Gentuu Penguin"];
+    let role = ["Back-End Developer", "Front-End Developer", "Gentoo Penguin"];
     let company = ["YCombinator", "Sequoia Ventures", "Chihuahua Technologies"];
     let project = ["Elite Erudite", "Crayola", "Spark!"];
+
+    let hour = new Date().getHours();
+    let turn = hour % 3;
 
     let answers = {
         name: `My name is ${names[turn]}.`,
@@ -88,8 +87,21 @@ function showAnswer(type) {
     };
 
     let answerBox = document.getElementById(`${type}-box`);
-    answerBox.style.animation = "";
-    answerBox.style.animation = "typing 3.5s steps(40, end),blink-caret .75s step-end";
-    answerBox.innerHTML = answers[type];
+    answerBox.innerHTML = ""; // Clear previous text
+    answerBox.style.animation = "none";
+    void answerBox.offsetWidth; // Force reflow to restart animation
 
+    let text = answers[type];
+    let i = 0;
+
+    function typeEffect() {
+        if (i < text.length) {
+            answerBox.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeEffect, 50);
+        }
+    }
+
+    answerBox.style.animation = "typing 2.5s steps(60, end), blink-caret .75s step-end infinite";
+    typeEffect();
 }
