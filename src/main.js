@@ -133,3 +133,42 @@ function addCard() {
     document.getElementById("card-description").value = "";
     document.getElementById("card-link").value = "";
 }
+
+document.addEventListener("mousemove", (e) => {
+    const text = document.getElementById("portfolio");
+
+    let centerX = window.innerWidth / 2;
+    let centerY = window.innerHeight / 2;
+    let x = (e.clientX - centerX) / centerX * -30; // Increased effect for rotation
+    let y = (e.clientY - centerY) / centerY * 30;
+
+    text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    text.style.textShadow = `
+        ${x * -1}px ${y * 1}px 25px deeppink,
+        ${x * 1}px ${-y * 1}px 35px deepskyblue,
+        ${y * -1}px ${x * 1}px 45px deeppink,
+        ${-y * 1}px ${-x * 1}px 55px deepskyblue`;
+
+
+});
+
+window.addEventListener("scroll", () => {
+    let scrollPosition = window.scrollY;
+    document.querySelector(".parallax").style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
+
+let lastScrollY = 0;
+function smoothParallax() {
+    let scrollPosition = window.scrollY;
+    let parallax = document.querySelector(".parallax");
+    
+    if (Math.abs(scrollPosition - lastScrollY) > 1) {
+        parallax.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        lastScrollY = scrollPosition;
+    }
+
+    requestAnimationFrame(smoothParallax);
+}
+
+smoothParallax();
+

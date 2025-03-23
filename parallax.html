@@ -1,0 +1,316 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modern Webpage with Parallax</title>
+        <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Arial', sans-serif;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #000;
+                color: deeppink;
+                padding: 10px 20px;
+                border-bottom: 0px solid deeppink;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .logo img {
+                height: 60px;
+                width: auto;
+                border-radius: 50%;
+                padding: 5px;
+            }
+
+            .logo img:hover {
+                transform: rotateY(180deg);
+                border-radius: 50%;
+                box-shadow: 0px 0px 10px deepskyblue;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+            }
+
+            nav ul li {
+                display: inline;
+            }
+
+            nav ul li a {
+                color: deeppink;
+                text-decoration: none;
+                font-size: 20px;
+                transition: 0.3s;
+            }
+
+            nav ul li a:hover {
+                color: deepskyblue;
+            }
+
+            /* Parallax Section */
+            .parallax {
+                height: 100vh;
+                background-image: url('image.jpg'); /* Replace with your image */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 3rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            main {
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 50px 20px;
+            }
+
+            .card {
+                background: deeppink;
+                color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                width: 300px;
+                transition: 0.3s;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                background: deepskyblue;
+            }
+
+            .card h3 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+
+            .card p {
+                font-size: 1.1em;
+                line-height: 1.6;
+                opacity: 0.8;
+            }
+
+            .form-container {
+                max-width: 1200px;
+                margin: 50px auto;
+                padding: 25px;
+                background: #000;
+                color: #fff;
+                border-radius: 15px;
+                box-shadow: 0 0 15px 3px deeppink;
+                text-align: center;
+            }
+
+            .form-container h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                text-align: left;
+                margin-bottom: 25px;
+            }
+
+            label {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid deeppink;
+                border-radius: 8px;
+                font-size: 18px;
+                background: #222;
+                color: #fff;
+                outline: none;
+                box-sizing: border-box;
+                resize: none;
+            }
+
+            input:focus,
+            textarea:focus {
+                border-color: deepskyblue;
+            }
+
+            #error {
+                color: red;
+                font-size: 14px;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                background-color: deeppink;
+                color: white;
+                font-size: 1.2em;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            button:hover {
+                background-color: deepskyblue;
+            }
+
+            footer {
+                background-color: black;
+                color: white;
+                padding: 10px;
+                font-size: 12px;
+                text-align: center;
+                border-top: 1px solid deeppink;
+            }
+        </style>
+    </head>
+    <body>
+
+    <header>
+        <div class="logo">
+            <img src="src/logo.svg" alt="Website Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Parallax Section -->
+    <div class="parallax">
+        <h1>Welcome to My Website</h1>
+    </div>
+
+    <main>
+        <h2>Deep Joshi</h2>
+    </main>
+
+    <section class="card-container">
+        <a href="deepbio.html">
+            <div class="card">
+                <h3>Vraj Talati</h3>
+                <p>Curating Fire</p>
+            </div>
+        </a>
+        <a href="deepbio.html">
+            <div class="card">
+                <h3>Sakshi Chavda</h3>
+                <p>Manufacturing Water</p>
+            </div>
+        </a>
+        <a href="deepbio.html">
+            <div class="card">
+                <h3>Deep Joshi</h3>
+                <p>Wakovia Bank</p>
+            </div>
+        </a>
+    </section>
+
+    <section class="form-container">
+        <h2>Get in Touch</h2>
+        <form onsubmit="contact(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+            </div>
+            <p id="error"></p>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Deep Joshi. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function contact(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let errorElement = document.getElementById("error");
+
+            errorElement.textContent = "";
+
+            if (name.length < 3) {
+                errorElement.textContent = "Name must be at least 3 characters long.";
+                return;
+            }
+
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                errorElement.textContent = "Enter a valid email address.";
+                return;
+            }
+
+            if (message.length < 5) {
+                errorElement.textContent = "Message must be at least 5 characters long.";
+                return;
+            }
+
+            errorElement.style.color = "greenyellow";
+            errorElement.textContent = "Form submitted successfully!";
+
+            setTimeout(() => {
+                errorElement.textContent = "";
+            }, 5000);
+
+            document.querySelector("form").reset();
+        }
+    </script>
+
+    </body>
+    </html>

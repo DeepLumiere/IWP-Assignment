@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Text Effect</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            perspective: 1000px;
+        } 
+
+        .portfolio-text {
+            font-size: 5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 5px;
+            position: relative;
+            text-shadow: 0 0 15px deeppink, 0 0 25px deepskyblue;
+            transition: transform 0.1s ease-out, text-shadow 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="portfolio-text" id="portfolio">PORTFOLIO</h1>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const text = document.getElementById("portfolio");
+            let x = (e.clientX / window.innerWidth - 0.5) * 30;
+            let y = (e.clientY / window.innerHeight - 0.5) * 30;
+            text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+            text.style.textShadow = `
+                ${x * 0.5}px ${y * 0.5}px 20px deeppink,
+                ${-x * 0.5}px ${-y * 0.5}px 30px deepskyblue,
+                ${y * 0.5}px ${-x * 0.5}px 40px deeppink,
+                ${-y * 0.5}px ${x * 0.5}px 50px deepskyblue`;
+        });
+    </script>
+</body>
+</html>

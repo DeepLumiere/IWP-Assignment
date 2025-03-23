@@ -4,7 +4,24 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
+    overflow-x: hidden;
 }
+
+    
+
+
+ /* Huge Portfolio Text */
+ .portfolio-text {
+    font-size: 10vw; /* Super large text */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 10px;
+    text-shadow: 0 0 20px deeppink, 0 0 30px deepskyblue;
+    transition: transform 0.1s ease-out, text-shadow 0.1s ease-out;
+    text-align: center;
+}
+
 
 header {
     display: flex;

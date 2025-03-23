@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="src/styles.css">
     <link rel="icon" href="src/logo.svg">
     <script src="src/main.js" defer></script>
+<style>
+            .parallax-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .parallax {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("image.jpg") center/cover no-repeat;
+            transform: translateY(0);
+            transition: transform 0.1s ease-out;
+            z-index: -1;
+        }
+
+</style>
+
 </head>
 <body>
 <header>
@@ -22,6 +45,20 @@
         </ul>
     </nav>
 </header>
+
+<div class="parallax-container">
+    <div class="parallax"></div>
+    <div class="portfolio-text" id="portfolio">PORTFOLIO</div>
+</div>
+
+<script>
+    document.addEventListener("scroll", () => {
+        let scrollPosition = window.scrollY;
+        document.querySelector(".parallax").style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    });
+</script>
+
+
 
 <section class="card-container" id="card-container">
     <a href="deepbio.html">
@@ -68,5 +105,26 @@
     <p>&copy; 2025 Deep Joshi. All Rights Reserved.</p>
 </footer>
 
+
+<script>
+document.addEventListener("mousemove", (e) => {
+    const text = document.getElementById("portfolio");
+
+    let centerX = window.innerWidth / 2;
+    let centerY = window.innerHeight / 2;
+    let x = (e.clientX - centerX) / centerX * -30; 
+    let y = (e.clientY - centerY) / centerY * 30;
+
+    requestAnimationFrame(() => {
+        text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        text.style.textShadow = `
+            ${x * -1}px ${y * 1}px 30px deeppink,
+            ${x * 1}px ${-y * 1}px 40px deepskyblue,
+            ${y * -1}px ${x * 1}px 50px deeppink,
+            ${-y * 1}px ${-x * 1}px 60px deepskyblue`;
+    });
+});
+
+</script>
 </body>
 </html>
