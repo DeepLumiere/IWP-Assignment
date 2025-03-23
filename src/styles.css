@@ -7,12 +7,51 @@ body {
     overflow-x: hidden;
 }
 
-    
+.about-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle, black, #111);
+    color: white;
+}
 
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 90%;
+}
 
- /* Huge Portfolio Text */
- .portfolio-text {
-    font-size: 10vw; /* Super large text */
+.about-content img {
+    width: 300px; /* Adjust for bigger size */
+    height: 300px; /* Keeps it square */
+    border-radius: 50%;
+    box-shadow: 0 0 20px deeppink;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 42px;
+    color: deeppink;
+    margin-bottom: 15px;
+}
+
+.about-text h2:hover {
+    color: deepskyblue;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+.portfolio-text {
+    font-size: 10vw;
     font-weight: bold;
     text-transform: uppercase;
     color: white;
@@ -39,11 +78,10 @@ header {
     border-radius: 50%;
     padding: 5px;
 }
+
 .logo img:hover {
     transform: rotateY(180deg);
     border-radius: 50%;
-    background-color: deepskyblue;
-    box-shadow: 0px 0px 20px deeppink;
 }
 
 nav ul {
@@ -149,6 +187,7 @@ input:focus,
 textarea:focus {
     border-color: deepskyblue;
 }
+
 #error {
     color: red;
     font-size: 14px;
@@ -209,46 +248,6 @@ button:hover {
 }
 
 
-/*!* Table Styles *!*/
-/*table {*/
-/*    width: 100%;*/
-/*    border-collapse: collapse;*/
-/*    margin: 20px 0;*/
-/*    font-size: 1.1em;*/
-/*    text-align: left;*/
-/*    background: #000;*/
-/*    color: #fff;*/
-/*    box-shadow: 0 0 10px 2px deeppink;*/
-/*    border-radius: 10px;*/
-/*    overflow: hidden;*/
-/*}*/
-
-/*!* Table Headers *!*/
-/*th {*/
-/*    background-color: deeppink;*/
-/*    color: black;*/
-/*    padding: 12px;*/
-/*    font-weight: bold;*/
-/*    text-transform: uppercase;*/
-/*}*/
-
-/*!* Table Rows *!*/
-/*td {*/
-/*    padding: 12px;*/
-/*    border-bottom: 1px solid deepskyblue;*/
-/*}*/
-
-/*!* Alternating Row Colors *!*/
-/*tr:nth-child(even) {*/
-/*    background-color: #111;*/
-/*}*/
-
-/*tr:hover {*/
-/*    background-color: deepskyblue;*/
-/*    color: black;*/
-/*    transition: 0.3s;*/
-/*}*/
-
 .bio-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -263,7 +262,7 @@ button:hover {
 h1 {
     color: deeppink;
     justify-self: center;
-    border-bottom: 1px solid deeppink;
+    /*border-bottom: 1px solid deeppink;*/
     margin-bottom: 50px;
 }
 
@@ -371,12 +370,24 @@ a {
 
 }
 
-/* The typing effect */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 600px }
+    from {
+        width: 0
+    }
+    to {
+        width: 600px
+    }
 }
 
-td {
-    padding-bottom: 20px;
+
+.about-container table {
+    border-collapse: separate;
+    border-spacing: 10px;
 }
+
+.about-container td {
+    padding: 10px; /* Ensures proper spacing inside each cell */
+}
+
+
+
