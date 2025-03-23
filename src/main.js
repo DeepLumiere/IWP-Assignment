@@ -152,23 +152,14 @@ document.addEventListener("mousemove", (e) => {
 
 });
 
-window.addEventListener("scroll", () => {
-    let scrollPosition = window.scrollY;
-    document.querySelector(".parallax").style.transform = `translateY(${scrollPosition * 0.5}px)`;
-});
+    document.getElementById("scrollBtn").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent any default behavior
 
-let lastScrollY = 0;
-function smoothParallax() {
-    let scrollPosition = window.scrollY;
-    let parallax = document.querySelector(".parallax");
-    
-    if (Math.abs(scrollPosition - lastScrollY) > 1) {
-        parallax.style.transform = `translateY(${scrollPosition * 0.4}px)`;
-        lastScrollY = scrollPosition;
+    const target = document.querySelector("header");
+    if (target) {
+        window.scrollTo({
+            top: target.offsetTop,
+            behavior: "smooth"
+        });
     }
-
-    requestAnimationFrame(smoothParallax);
-}
-
-smoothParallax();
-
+});
