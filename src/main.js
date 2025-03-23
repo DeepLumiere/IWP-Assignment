@@ -1,37 +1,37 @@
 function contact(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("email").value.trim();
-  let message = document.getElementById("message").value.trim();
-  let errorElement = document.getElementById("error");
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let errorElement = document.getElementById("error");
 
-  errorElement.textContent = "";
-
-  if (name.length < 3) {
-    errorElement.textContent = "Name must be at least 3 characters long.";
-    return;
-  }
-
-  let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!emailPattern.test(email)) {
-    errorElement.textContent = "Enter a valid email address.";
-    return;
-  }
-
-  if (message.length < 5) {
-    errorElement.textContent = "Message must be at least 5 characters long.";
-    return;
-  }
-
-  errorElement.style.color = "greenyellow";
-  errorElement.textContent = "Form submitted successfully!";
-
-  setTimeout(() => {
     errorElement.textContent = "";
-  }, 5000);
 
-  document.querySelector("form").reset();
+    if (name.length < 3) {
+        errorElement.textContent = "Name must be at least 3 characters long.";
+        return;
+    }
+
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        errorElement.textContent = "Enter a valid email address.";
+        return;
+    }
+
+    if (message.length < 5) {
+        errorElement.textContent = "Message must be at least 5 characters long.";
+        return;
+    }
+
+    errorElement.style.color = "greenyellow";
+    errorElement.textContent = "Form submitted successfully!";
+
+    setTimeout(() => {
+        errorElement.textContent = "";
+    }, 5000);
+
+    document.querySelector("form").reset();
 }
 
 document.getElementById("edit-bio").addEventListener("click", function () {
@@ -152,14 +152,3 @@ document.addEventListener("mousemove", (e) => {
 
 });
 
-    document.getElementById("scrollBtn").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent any default behavior
-
-    const target = document.querySelector("header");
-    if (target) {
-        window.scrollTo({
-            top: target.offsetTop,
-            behavior: "smooth"
-        });
-    }
-});

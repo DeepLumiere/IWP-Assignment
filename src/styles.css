@@ -119,7 +119,7 @@ main h1 {
 }
 
 main p {
-    font-size: 1.2em;
+    font-size: 18px;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
@@ -202,7 +202,7 @@ button {
     border: none;
     background-color: deeppink;
     color: white;
-    font-size: 1.2em;
+    font-size: 18px;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
@@ -243,7 +243,7 @@ button:hover {
 }
 
 .card p {
-    font-size: 1.1em;
+    font-size: 16px;
     line-height: 1.6;
     opacity: 0.8;
 }
@@ -269,7 +269,7 @@ h1 {
 
 p, ul {
     text-align: left;
-    font-size: 1.2em;
+    font-size: 18px;
 }
 
 ul {
@@ -283,7 +283,7 @@ input {
     margin: 10px 0;
     border: 1px solid deeppink;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 18px;
     background: #222;
     color: #fff;
     outline: none;
@@ -314,7 +314,7 @@ a {
     padding: 15px;
     background: #111;
     color: white;
-    font-size: 1.2em;
+    font-size: 18px;
     text-align: center;
     border: 2px solid deeppink;
     border-radius: 10px;
@@ -397,19 +397,21 @@ a {
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
+    background: deeppink;
     color: white;
     border: none;
-    height: 50px;
-    padding: 12px 20px;
+    width: 20%;
+    height: 120px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 22px;
     transition: background 0.3s, transform 0.2s;
     outline: none;
+    padding-bottom: 60px;
+    border-radius: 20px 20px 0px 0px;
 }
 
 #scrollBtn:hover {
-    background: rgba(0, 0, 0, 0.9);
+    background: deepskyblue;
     transform: translateX(-50%) scale(1.1);
 }
 

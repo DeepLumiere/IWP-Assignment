@@ -36,7 +36,8 @@
         }
 
         .about-content img:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
             box-shadow: 0 0 20px deepskyblue;
             content: url("src/wolf.svg");
         }
@@ -48,6 +49,20 @@
     <div class="parallax">
         <h1 class="portfolio-text" id="portfolio">Imagine 4D!</h1>
         <button id="scrollBtn">▼ Scroll Down</button>
+        <script>
+            document.getElementById("scrollBtn").addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent any default behavior
+
+                const target = document.querySelector("header");
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+            });
+
+        </script>
     </div>
 </div>
 
