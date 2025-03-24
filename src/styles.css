@@ -397,7 +397,7 @@ a {
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0,0,0,0.5);
+    background: transparent;
     color: white;
     border: none;
     width: 20%;
@@ -411,7 +411,7 @@ a {
 }
 
 #scrollBtn:hover {
-    background: deepskyblue;
+    background: transparent;
     transform: translateX(-50%) scale(1.1);
 }
 
