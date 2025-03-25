@@ -1,3 +1,11 @@
+let turn = 1;
+
+function updateTurn() {
+    let check = document.querySelector("input[name='turn']").value;
+    turn = parseInt(check) % 3;
+    console.log("Turn updated to:", turn);
+}
+
 function contact(event) {
     event.preventDefault();
 
@@ -75,19 +83,16 @@ function showAnswer(type) {
     let company = ["Deep's Institute of Artificial Intelligence", "DeepWorld Designs", "Chihuahua Technologies"];
     let project = ["Apache Kafka", "Apache Airavata", "Spoof Halwa!"];
 
-    let hour = new Date().getHours();
-    let turn = hour % 3;
-
     let answers = {
         name: `My name is ${names[turn]}. How are you my friend?`,
         nationality: `I am from ${nationality[turn]}.`,
-        role: `I work as a ${role[turn]}. As a ${role[turn]}`,
+        role: `I work as a ${role[turn]}.`,
         company: `I am currently associated with ${company[turn]}.`,
         project: `Right now, I am working on a project called ${project[turn]}.`
     };
 
     let answerBox = document.getElementById(`${type}-box`);
-    answerBox.innerHTML = ""; // Clear previous text
+    answerBox.innerHTML = "";
     answerBox.style.animation = "none";
     void answerBox.offsetWidth; // Force reflow to restart animation
 
@@ -105,6 +110,7 @@ function showAnswer(type) {
     answerBox.style.animation = "typing 2s steps(end, end)";
     typeEffect();
 }
+
 
 function addCard() {
     let name = document.getElementById("card-title").value;

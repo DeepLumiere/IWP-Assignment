@@ -21,6 +21,11 @@
     </nav>
 </header>
 <h1>About</h1>
+<form onsubmit="updateTurn(); return false;">
+    <input type="number" name="turn">
+    <input type="submit" value="Set Turn">
+</form>
+
 <section class="about-container">
     <table>
         <tr>
@@ -32,7 +37,7 @@
             </td>
 
         </tr>
-        <tr>
+        <tr>l
             <td>
                 <button class="question" onclick="showAnswer('nationality')">Where are you from?</button>
             </td>
