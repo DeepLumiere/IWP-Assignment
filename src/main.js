@@ -94,7 +94,7 @@ function showAnswer(type) {
     let answerBox = document.getElementById(`${type}-box`);
     answerBox.innerHTML = "";
     answerBox.style.animation = "none";
-    void answerBox.offsetWidth; // Force reflow to restart animation
+    void answerBox.offsetWidth;
 
     let text = answers[type];
     let i = 0;
@@ -140,20 +140,20 @@ function addCard() {
     document.getElementById("card-link").value = "";
 }
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mouseenter", (e) => {
     const text = document.getElementById("portfolio");
 
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 2;
-    let x = (e.clientX - centerX) / centerX * -30; // Increased effect for rotation
+    let x = (e.clientX - centerX) / centerX * -30;
     let y = (e.clientY - centerY) / centerY * 30;
 
     text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
     text.style.textShadow = `
-        ${x * -1}px ${y * 1}px 25px deeppink,
-        ${x * 1}px ${-y * 1}px 35px deepskyblue,
-        ${y * -1}px ${x * 1}px 45px deeppink,
-        ${-y * 1}px ${-x * 1}px 55px deepskyblue`;
+        ${-x}px ${y}px 25px deeppink,
+        ${x}px ${-y}px 35px deepskyblue,
+        ${-y}px ${x}px 45px deeppink,
+        ${-y}px ${-x}px 55px deepskyblue`;
 
 
 });
