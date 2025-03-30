@@ -6,41 +6,22 @@
     <title>Modern Webpage</title>
     <link rel="stylesheet" href="src/styles.css">
     <link rel="icon" href="src/logo.svg">
-    <script src="src/main.js" defer></script>
     <style>
-        .parallax-container {
-            position: relative;
-            width: 100%;
-            height: 800px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .parallax {
-            width: 100%;
-            height: 100%;
-            background-image: url('image.jpg'); /* Replace with your image */
-            background-attachment: fixed;
-            background-position: center;
-
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .about-content img:hover {
-            transform: scale(1.1);
-            transition: transform 0.5s ease-in-out;
-            box-shadow: 0 0 20px deepskyblue;
-            content: url("src/wolf.svg");
-        }
+    .parallax-container, .parallax {
+        width:100%; height:800px;
+        display:flex; align-items:center;
+        justify-content:center; overflow:hidden;
+        position:relative;
+    }
+    .parallax {
+        background:url('image.jpg') fixed center/cover no-repeat;
+        color:#fff; font-size:3rem;
+        text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .about-content img:hover {
+        transform:scale(1.1); transition:transform 0.5s ease-in-out;
+        box-shadow:0 0 20px deepskyblue; content:url("src/wolf.svg");
+    }
     </style>
 </head>
 <body>
@@ -50,37 +31,25 @@
         <h1 class="portfolio-text" id="portfolio">Imagine 4D!</h1>
         <button id="scrollBtn">▼ Scroll Down</button>
         <script>
-            document.getElementById("scrollBtn").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent any default behavior
-
-                const target = document.querySelector("header");
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop,
-                        behavior: "smooth"
-                    });
-                }
-            });
-
+        document.getElementById("scrollBtn").onclick = function(e) {
+            e.preventDefault();
+            document.querySelector("header").scrollIntoView({behavior:"smooth"});
+        };
         </script>
     </div>
 </div>
 
-
-
 <header>
-    <div class="logo">
-        <img src="src/logo.svg" alt="Website Logo">
-    </div>
+    <div class="logo"><img src="src/logo.svg" alt="Website Logo"></div>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="project.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
+
 <section class="about-team">
     <div class="about-content">
         <img src="src/wolfp.svg" alt="Our Team">
@@ -91,31 +60,15 @@
     </div>
 </section>
 
-
 <section class="card-container" id="card-container">
-    <a href="vrajbio.html">
-        <div class="card">
-            <h3>Vraj Talati</h3>
-            <p>Curating Fire</p>
-        </div>
-    </a>
-    <a href="sakshibio.html">
-        <div class="card">
-            <h3>Sakshi Chavda</h3>
-            <p>Manufacturing Water</p>
-        </div>
-    </a>
-    <a href="deepbio.html">
-        <div class="card">
-            <h3>Deep Joshi</h3>
-            <p>Wakovia Bank</p>
-        </div>
-    </a>
+    <a href="vrajbio.html"><div class="card"><h3>Vraj Talati</h3><p>Curating Fire</p></div></a>
+    <a href="sakshibio.html"><div class="card"><h3>Sakshi Chavda</h3><p>Manufacturing Water</p></div></a>
+    <a href="deepbio.html"><div class="card"><h3>Deep Joshi</h3><p>Wakovia Bank</p></div></a>
 </section>
 
 <section class="form-container">
     <h2>Add New Member</h2>
-    <form onsubmit="addCard(); return false;">
+    <form onsubmit="addCard();return false">
         <div class="form-group">
             <label for="card-title">Title</label>
             <input type="text" id="card-title" placeholder="Enter card title">
@@ -128,35 +81,23 @@
             <label for="card-link">Link</label>
             <input type="url" id="card-link" placeholder="Enter card link">
         </div>
-
         <button type="submit">Add Card</button>
     </form>
 </section>
 
-<footer>
-    <p>&copy; 2025 VDS. All Rights Reserved.</p>
-</footer>
-
+<footer><p>&copy; 2025 VDS. All Rights Reserved.</p></footer>
 
 <script>
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", e => {
     const text = document.getElementById("portfolio");
-
-    let centerX = window.innerWidth / 2;
-    let centerY = window.innerHeight / 2;
-    let x = (e.clientX - centerX) / centerX * -30;
-    let y = (e.clientY - centerY) / centerY * 30;
-
+    let x = (e.clientX - innerWidth/2) / (innerWidth/2) * -30;
+    let y = (e.clientY - innerHeight/2) / (innerHeight/2) * 30;
+    
     requestAnimationFrame(() => {
         text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-        text.style.textShadow = `
-            ${x * -1}px ${y * 1}px 30px deeppink,
-            ${x * 1}px ${-y * 1}px 40px deepskyblue,
-            ${y * -1}px ${x * 1}px 50px deeppink,
-            ${-y * 1}px ${-x * 1}px 60px deepskyblue`;
+        text.style.textShadow = `${x*-1}px ${y*1}px 30px deeppink, ${x*1}px ${-y*1}px 40px deepskyblue, ${y*-1}px ${x*1}px 50px deeppink, ${-y*1}px ${-x*1}px 60px deepskyblue`;
     });
 });
-
 </script>
 </body>
 </html>
