@@ -47,14 +47,7 @@ document.getElementById("edit-bio").addEventListener("click", function () {
     document.getElementById("bio-form").style.display = "block";
 
     document.getElementById("name").value = document.getElementById("bio-name").textContent;
-    let dobInput = document.getElementById("dob");
-    let bioDobValue = document.getElementById("bio-dob").value;
-
-    if (bioDobValue) {
-        let dateObj = new Date(bioDobValue);
-        let formattedDate = dateObj.toISOString().split('T')[0]; // Convert to YYYY-MM-DD format
-        dobInput.value = formattedDate;
-    }
+    document.getElementById("dob").value = "2000-01-01";
     document.getElementById("nationality").value = document.getElementById("bio-nationality").textContent;
 
     let educationList = document.querySelectorAll("#bio-education li");

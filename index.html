@@ -4,41 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/stylesblue.css">
     <link rel="icon" href="src/logo.svg">
     <style>
-    .parallax-container, .parallax {
-        width:100%; height:800px;
-        display:flex; align-items:center;
-        justify-content:center; overflow:hidden;
-        position:relative;
-    }
-    .parallax {
-        background:url('image.jpg') fixed center/cover no-repeat;
-        color:#fff; font-size:3rem;
-        text-shadow:2px 2px 4px rgba(0,0,0,0.5);
-    }
     .about-content img:hover {
         transform:scale(1.1); transition:transform 0.5s ease-in-out;
-        box-shadow:0 0 20px deepskyblue; content:url("src/wolf.svg");
+        box-shadow:0 0 20px #e8b904; content:url("src/wolf.svg");
     }
     </style>
 </head>
 <body>
-
-<div class="parallax-container">
-    <div class="parallax">
-        <h1 class="portfolio-text" id="portfolio">Imagine 4D!</h1>
-        <button id="scrollBtn">▼ Scroll Down</button>
-        <script>
-        document.getElementById("scrollBtn").onclick = function(e) {
-            e.preventDefault();
-            document.querySelector("header").scrollIntoView({behavior:"smooth"});
-        };
-        </script>
-    </div>
-</div>
-
 <header>
     <div class="logo"><img src="src/logo.svg" alt="Website Logo"></div>
     <nav>
@@ -61,21 +36,21 @@
 </section>
 
 <section class="card-container" id="card-container">
-    <a href="vrajbio.html"><div class="card"><h3>Vraj Talati</h3><p>Founder</p></div></a>
-    <a href="sakshibio.html"><div class="card"><h3>Sakshi Chavda</h3><p>Team Leader</p></div></a>
-    <a href="deepbio.html"><div class="card"><h3>Deep Joshi</h3><p>Member</p></div></a>
+    <a href="vrajtodo.html"><div class="card"><h3>Vraj Talati</h3><p>Kafka</p></div></a>
+    <a href="sakshitodo.html"><div class="card"><h3>Sakshi Chavda</h3><p>Hadoop</p></div></a>
+    <a href="deeptodo.html"><div class="card"><h3>Deep Joshi</h3><p>Chihuahua</p></div></a>
 </section>
 
 <section class="form-container">
-    <h2>Add New Member</h2>
+    <h2>Add New Employee</h2>
     <form onsubmit="addCard();return false">
         <div class="form-group">
-            <label for="card-title">Title</label>
-            <input type="text" id="card-title" placeholder="Enter card title">
+            <label for="card-title">Employee</label>
+            <input type="text" id="card-title" placeholder="Enter Employee Name">
         </div>
         <div class="form-group">
-            <label for="card-description">Description</label>
-            <input type="text" id="card-description" placeholder="Enter card description">
+            <label for="card-description">Project</label>
+            <input type="text" id="card-description" placeholder="Enter Project">
         </div>
         <div class="form-group">
             <label for="card-link">Link</label>
@@ -85,7 +60,7 @@
     </form>
 </section>
 
-<footer><p>&copy; 2025 VDS. All Rights Reserved.</p></footer>
+<footer><p>&copy; 2025 Deep Joshi. All Rights Reserved.</p></footer>
 
 <script>
 document.addEventListener("mousemove", e => {
