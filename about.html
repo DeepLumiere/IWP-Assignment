@@ -20,11 +20,15 @@
         </ul>
     </nav>
 </header>
-<h1>About</h1>
-<form onsubmit="updateTurn(); return false;">
-    <input type="number" name="turn">
-    <input type="submit" value="Set Turn">
-</form>
+    <h1>About</h1>
+    <form onsubmit="updateTurn(); return false;">
+        <form onsubmit="updateTurn(); return false;">
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <label for="turn" style="color: beige; padding-left: 60px;">Enter Turn:</label>
+                <input type="number" id="turn" name="turn" placeholder="Enter Turn" style="width: 130px;">
+                <input type="submit" value="Set Turn" style="width: 120px;" >
+            </div>
+        </form>
 
 <section class="about-container">
     <table>
@@ -37,7 +41,7 @@
             </td>
 
         </tr>
-        <tr>l
+        <tr>
             <td>
                 <button class="question" onclick="showAnswer('nationality')">Where are you from?</button>
             </td>
