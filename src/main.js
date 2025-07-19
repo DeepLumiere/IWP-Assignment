@@ -1,160 +1,188 @@
+// Global variable to track current team member turn (0-2: Vraj, Sakshi, Deep)
 let turn = 1;
 
+/**
+ * Updates the current team member turn based on user input
+ * Used for cycling through different team member information
+ */
 function updateTurn() {
-    let check = document.querySelector("input[name='turn']").value;
-    turn = parseInt(check) % 3;
-    console.log("Turn updated to:", turn);
+  let check = document.querySelector("input[name='turn']").value;
+  turn = parseInt(check) % 3;
+  console.log('Turn updated to:', turn);
 }
 
+/**
+ * Handles contact form submission with validation
+ * Validates name (min 3 chars), email format, and message (min 5 chars)
+ */
 function contact(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
-    let errorElement = document.getElementById("error");
+  let name = document.getElementById('name').value.trim();
+  let email = document.getElementById('email').value.trim();
+  let message = document.getElementById('message').value.trim();
+  let errorElement = document.getElementById('error');
 
-    errorElement.textContent = "";
+  errorElement.textContent = '';
 
-    if (name.length < 3) {
-        errorElement.textContent = "Name must be at least 3 characters long.";
-        return;
-    }
+  // Validate name length
+  if (name.length < 3) {
+    errorElement.textContent = 'Name must be at least 3 characters long.';
+    return;
+  }
 
-    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-        errorElement.textContent = "Enter a valid email address.";
-        return;
-    }
+  // Validate email format using regex
+  let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(email)) {
+    errorElement.textContent = 'Enter a valid email address.';
+    return;
+  }
 
-    if (message.length < 5) {
-        errorElement.textContent = "Message must be at least 5 characters long.";
-        return;
-    }
+  // Validate message length
+  if (message.length < 5) {
+    errorElement.textContent = 'Message must be at least 5 characters long.';
+    return;
+  }
 
-    errorElement.style.color = "greenyellow";
-    errorElement.textContent = "Form submitted successfully!";
+  // Show success message
+  errorElement.style.color = 'greenyellow';
+  errorElement.textContent = 'Form submitted successfully!';
 
-    setTimeout(() => {
-        errorElement.textContent = "";
-    }, 5000);
+  // Clear success message after 5 seconds
+  setTimeout(() => {
+    errorElement.textContent = '';
+  }, 5000);
 
-    document.querySelector("form").reset();
+  // Reset form fields
+  document.querySelector('form').reset();
 }
 
-document.getElementById("edit-bio").addEventListener("click", function () {
-    document.getElementById("bio-content").style.display = "none";
-    document.getElementById("bio-form").style.display = "block";
+document.getElementById('edit-bio').addEventListener('click', function () {
+  document.getElementById('bio-content').style.display = 'none';
+  document.getElementById('bio-form').style.display = 'block';
 
-    document.getElementById("name").value = document.getElementById("bio-name").textContent;
-    document.getElementById("dob").value = "2000-01-01";
-    document.getElementById("nationality").value = document.getElementById("bio-nationality").textContent;
+  document.getElementById('name').value =
+    document.getElementById('bio-name').textContent;
+  document.getElementById('dob').value = '2000-01-01';
+  document.getElementById('nationality').value =
+    document.getElementById('bio-nationality').textContent;
 
-    let educationList = document.querySelectorAll("#bio-education li");
-    let educationArray = [];
-    educationList.forEach(item => educationArray.push(item.textContent));
-    document.getElementById("education").value = educationArray.join(", ");
+  let educationList = document.querySelectorAll('#bio-education li');
+  let educationArray = [];
+  educationList.forEach((item) => educationArray.push(item.textContent));
+  document.getElementById('education').value = educationArray.join(', ');
 });
 
 function saveBio(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    document.getElementById("bio-name").textContent = document.getElementById("name").value;
-    document.getElementById("bio-dob").textContent = document.getElementById("dob").value;
-    document.getElementById("bio-nationality").textContent = document.getElementById("nationality").value;
+  document.getElementById('bio-name').textContent =
+    document.getElementById('name').value;
+  document.getElementById('bio-dob').textContent =
+    document.getElementById('dob').value;
+  document.getElementById('bio-nationality').textContent =
+    document.getElementById('nationality').value;
 
-    let newEducation = document.getElementById("education").value.split(",");
-    let educationList = document.getElementById("bio-education");
-    educationList.innerHTML = "";
-    newEducation.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = item.trim();
-        educationList.appendChild(li);
-    });
+  let newEducation = document.getElementById('education').value.split(',');
+  let educationList = document.getElementById('bio-education');
+  educationList.innerHTML = '';
+  newEducation.forEach((item) => {
+    let li = document.createElement('li');
+    li.textContent = item.trim();
+    educationList.appendChild(li);
+  });
 
-    document.getElementById("bio-content").style.display = "block";
-    document.getElementById("bio-form").style.display = "none";
+  document.getElementById('bio-content').style.display = 'block';
+  document.getElementById('bio-form').style.display = 'none';
 }
 
 function showAnswer(type) {
-    let names = ["Vraj", "Sakshi", "Deep"];
-    let nationality = ["India", "UAE", "United States of America"];
-    let role = ["Back-End Developer", "Front-End Developer", "Gentoo Penguin"];
-    let company = ["Deep's Institute of Artificial Intelligence", "DeepWorld Designs", "Chihuahua Technologies"];
-    let project = ["Apache Kafka", "Apache Airavata", "Spoof Halwa!"];
+  let names = ['Vraj', 'Sakshi', 'Deep'];
+  let nationality = ['India', 'UAE', 'United States of America'];
+  let role = ['Back-End Developer', 'Front-End Developer', 'Gentoo Penguin'];
+  let company = [
+    "Deep's Institute of Artificial Intelligence",
+    'DeepWorld Designs',
+    'Chihuahua Technologies',
+  ];
+  let project = ['Apache Kafka', 'Apache Airavata', 'Spoof Halwa!'];
 
-    let answers = {
-        name: `My name is ${names[turn]}. How are you my friend?`,
-        nationality: `I am from ${nationality[turn]}.`,
-        role: `I work as a ${role[turn]}.`,
-        company: `I am currently associated with ${company[turn]}.`,
-        project: `Right now, I am working on a project called ${project[turn]}.`
-    };
+  let answers = {
+    name: `My name is ${names[turn]}. How are you my friend?`,
+    nationality: `I am from ${nationality[turn]}.`,
+    role: `I work as a ${role[turn]}.`,
+    company: `I am currently associated with ${company[turn]}.`,
+    project: `Right now, I am working on a project called ${project[turn]}.`,
+  };
 
-    let answerBox = document.getElementById(`${type}-box`);
-    answerBox.innerHTML = "";
-    answerBox.style.animation = "none";
-    void answerBox.offsetWidth;
+  let answerBox = document.getElementById(`${type}-box`);
+  answerBox.innerHTML = '';
+  answerBox.style.animation = 'none';
+  void answerBox.offsetWidth;
 
-    let text = answers[type];
-    let i = 0;
+  let text = answers[type];
+  let i = 0;
 
-    function typeEffect() {
-        if (i < text.length) {
-            answerBox.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeEffect, 50);
-        }
+  function typeEffect() {
+    if (i < text.length) {
+      answerBox.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 50);
     }
+  }
 
-    answerBox.style.animation = "typing 2s steps(end, end)";
-    typeEffect();
+  answerBox.style.animation = 'typing 2s steps(end, end)';
+  typeEffect();
 }
 
-
+/**
+ * Dynamically adds a new team member card to the homepage
+ * Takes input from the form and creates a clickable card element
+ */
 function addCard() {
-    let name = document.getElementById("card-title").value;
-    let description = document.getElementById("card-description").value;
-    let link = document.getElementById("card-link").value;
+  let name = document.getElementById('card-title').value;
+  let description = document.getElementById('card-description').value;
+  let link = document.getElementById('card-link').value;
 
-    if (!name || !description || !link) {
-        alert("Please fill out all fields.");
-        return;
-    }
+  // Validate all fields are filled
+  if (!name || !description || !link) {
+    alert('Please fill out all fields.');
+    return;
+  }
 
-    let cardContainer = document.getElementById("card-container");
+  let cardContainer = document.getElementById('card-container');
 
-    let newCard = document.createElement("a");
-    newCard.href = link;
-    newCard.innerHTML = `
+  // Create new card element with link
+  let newCard = document.createElement('a');
+  newCard.href = link;
+  newCard.innerHTML = `
         <div class="card">
             <h3>${name}</h3>
             <p>${description}</p>
         </div>
     `;
 
-    cardContainer.appendChild(newCard);
+  // Add card to container
+  cardContainer.appendChild(newCard);
 
-    document.getElementById("card-title").value = "";
-    document.getElementById("card-description").value = "";
-    document.getElementById("card-link").value = "";
+  // Clear form fields
+  document.getElementById('card-title').value = '';
+  document.getElementById('card-description').value = '';
+  document.getElementById('card-link').value = '';
 }
 
-document.addEventListener("mouseenter", (e) => {
-    const text = document.getElementById("portfolio");
+document.addEventListener('mouseenter', (e) => {
+  const text = document.getElementById('portfolio');
 
-    let centerX = window.innerWidth / 2;
-    let centerY = window.innerHeight / 2;
-    let x = (e.clientX - centerX) / centerX * -30;
-    let y = (e.clientY - centerY) / centerY * 30;
+  let centerX = window.innerWidth / 2;
+  let centerY = window.innerHeight / 2;
+  let x = ((e.clientX - centerX) / centerX) * -30;
+  let y = ((e.clientY - centerY) / centerY) * 30;
 
-    text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-    text.style.textShadow = `
+  text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  text.style.textShadow = `
         ${-x}px ${y}px 25px deeppink,
         ${x}px ${-y}px 35px deepskyblue,
         ${-y}px ${x}px 45px deeppink,
         ${-y}px ${-x}px 55px deepskyblue`;
-
-
 });
-
